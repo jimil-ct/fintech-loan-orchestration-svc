@@ -1,8 +1,12 @@
 # Demo service config
 company: ClosingDesk Inc.
 industry: fintech
-service: loan-orchestration-svc
+service: document-vault-svc
 risk_controls:
   - change approval
   - audit trail
   - secure code review
+  - filename sanitization
+  - path traversal protection
+   - UUID-based file naming
+   - chroot/containerization
