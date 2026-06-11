@@ -1,7 +1,24 @@
 # Demo service config
 company: ClosingDesk Inc.
 industry: fintech
-service: loan-orchestration-svc
+service: borrower-portal-api
+jwt_config:
+  algorithm: RS256
+  secret: ${JWT_SECRET_KEY:?JWT_SECRET_KEY is required}
+  issuer: ${JWT_ISSUER:-borrower-portal-api}
+  audience: ${JWT_AUDIENCE:-borrower-portal-api}
+  expiration_time: 3600
+  allowed_algorithms:
+    - RS256
+    - ES256
+  forbidden_algorithms:
+    - none
+    - HS256
+  claim_validation:
+    validate_exp: true
+    validate_iat: true
+    validate_iss: true
+    validate_aud: true
 risk_controls:
   - change approval
   - audit trail
