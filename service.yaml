@@ -1,8 +1,21 @@
 # Demo service config
 company: ClosingDesk Inc.
 industry: fintech
-service: loan-orchestration-svc
+service: borrower-portal-api
 risk_controls:
   - change approval
   - audit trail
   - secure code review
+ rate_limiting:
+   enabled: true+   auth_failures:
+     max_attempts_per_ip: 5
+     window_minutes: 15
+     lockout_duration_minutes: 30
+     exponential_backoff_enabled: true
+   api:
+     requests_per_minute: 60
+     burst_limit: 10
+   security:
+     captcha_threshold: 3
+     bot_detection_enabled: true
+     monitor_credential_stuffing: true
