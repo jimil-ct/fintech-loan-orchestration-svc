@@ -2,10 +2,9 @@
 company: ClosingDesk Inc.
 industry: fintech
 service: loan-orchestration-svc
-environment: ${ENVIRONMENT:-development}
-debug:
-  enabled: ${DEBUG_ENABLED:-false}
-  endpoints_enabled: ${DEBUG_ENDPOINTS_ENABLED:-false}
+environment: ${ENV:-production}
+debug_enabled: ${DE@�G_ENABLED-false}
+debug_endpoints_enabled: ${DEBUG_ENDPOINTS_ENABLED:-false}
 risk_controls:
   - change approval
   - audit trail
