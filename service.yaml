@@ -1,8 +1,20 @@
 # Demo service config
 company: ClosingDesk Inc.
 industry: fintech
-service: loan-orchestration-svc
+service: borrower-portal-api
 risk_controls:
   - change approval
   - audit trail
   - secure code review
+authentication:
+  jwt_validation:
+    enabled: true
+    auth_service_url: "${AUTH_SERVICE_URL:?AUTH_SERVICE_URL is required}"
+    required_scopes: ["borrower:read", "borrower:write"]
+   rate_limiting:
+    enabled: true
+    requests_per_minute: 60
+  mtls:
+    enabled: true
+    require_client_cert: true
+    cca_path: "/etc/ssl/certs/ca.crt"
