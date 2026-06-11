@@ -1,8 +1,12 @@
 # Demo service config
 company: ClosingDesk Inc.
 industry: fintech
-service: loan-orchestration-svc
+service: document-vault-svc
 risk_controls:
   - change approval
   - audit trail
   - secure code review
+  - data validation
+  - ml_security_controls
+   - anomaly_detection
+   - training_data_curation
