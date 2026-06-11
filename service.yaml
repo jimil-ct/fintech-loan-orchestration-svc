@@ -1,7 +1,23 @@
 # Demo service config
 company: ClosingDesk Inc.
 industry: fintech
-service: loan-orchestration-svc
+service: notification-svc
+template_engine:
+  engine: mustache
+  safe_mode: true
+  sandbox_mode: true
+  allowed_tags:
+    - "name"
+    - "amount"
+    - "due_date"
+    - "loan_id"
+  escape_html: true
+  escape_js: true
+  disabled_features:
+    - exec
+    - eval
+    - import
+    - include
 risk_controls:
   - change approval
   - audit trail
