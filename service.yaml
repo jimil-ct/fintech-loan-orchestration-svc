@@ -1,8 +1,12 @@
 # Demo service config
 company: ClosingDesk Inc.
 industry: fintech
-service: loan-orchestration-svc
+service: borrower-portal-api
 risk_controls:
   - change approval
   - audit trail
+  - multi_factor_authentication
+  - step_up_auth_high_risk_ops
+  - risk_based_authentication
+  - account_lockout_anomaly_detection
   - secure code review
