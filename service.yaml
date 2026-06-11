@@ -4,5 +4,8 @@ industry: fintech
 service: loan-orchestration-svc
 risk_controls:
   - change approval
-  - audit trail
+  - audit trail:
+      integrity_protection: required
+      structured_logging: json
+      tamper_detection: hmac_chain
   - secure code review
