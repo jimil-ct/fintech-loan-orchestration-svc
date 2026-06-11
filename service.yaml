@@ -2,6 +2,16 @@
 company: ClosingDesk Inc.
 industry: fintech
 service: loan-orchestration-svc
+network:
+  tls: true
+  mtls: true
+  tls_version: "1.3"
+  certificate_management:
+    enabled: true
+    auto_rotation: true
+    provider: "istio-ca"
+  cipher_suites: "strong"
+  network_segmentation: true
 risk_controls:
   - change approval
   - audit trail
