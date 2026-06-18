@@ -10,4 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Demo policy check
-        run: echo "CognitivTrust demo policy check passed"
+          run: |
+            echo "Starting CognitivTrust security policy check..."
+            [ -f ".gitignore" ] || { echo "ERROR: No .gitignore found - required for security"; exit 1; }
+            [ -z "$GITHUB_TOKEN" ] && { echo "ERROR: GITHUB_TOKEN not available - authentication required"; exit 1; }
+            echo "CognitivTrust demo policy check passed"
